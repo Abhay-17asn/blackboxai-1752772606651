@@ -1,0 +1,18 @@
+{
+  "name": "dovazol-telegram-miniapp",
+  "version": "1.0.0",
+  "description": "Telegram Mini App for DOVAZOL token ecosystem with airdrop, withdrawal, boost, tasks, and referral features",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["telegram", "miniapp", "dovazol", "airdrop", "crypto", "tokens"],
+  "author": "DOVAZOL Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5"
+  }
+}
