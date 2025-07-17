@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOVAZOL Token Ecosystem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">DOVAZOL</h1>
+                <p class="app-subtitle">Token Ecosystem</p>
+            </div>
+            <div class="user-info" id="userInfo">
+                <div class="balance-card">
+                    <div class="balance-label">Your Balance</div>
+                    <div class="balance-amount" id="userBalance">0 DOVAZOL</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Airdrop Section -->
+            <section class="section airdrop-section">
+                <div class="section-header">
+                    <h2 class="section-title">Free Airdrop</h2>
+                    <p class="section-description">Claim your free DOVAZOL tokens now!</p>
+                </div>
+                <button class="btn btn-primary btn-large" id="claimAirdrop">
+                    <span class="btn-text">Claim 50 DOVAZOL</span>
+                </button>
+            </section>
+
+            <!-- Tasks Section -->
+            <section class="section tasks-section">
+                <div class="section-header">
+                    <h2 class="section-title">Complete Tasks</h2>
+                    <p class="section-description">Earn tokens by completing simple tasks</p>
+                </div>
+                <div class="tasks-list" id="tasksList">
+                    <!-- Tasks will be loaded dynamically -->
+                </div>
+            </section>
+
+            <!-- Boost Section -->
+            <section class="section boost-section">
+                <div class="section-header">
+                    <h2 class="section-title">Boost Rewards</h2>
+                    <p class="section-description">Multiply your earnings for 1 hour</p>
+                </div>
+                <div class="boost-info">
+                    <div class="boost-details">
+                        <div class="boost-multiplier">1.5x Rewards</div>
+                        <div class="boost-cost">Cost: 200 DOVAZOL</div>
+                    </div>
+                    <button class="btn btn-secondary" id="applyBoost">
+                        <span class="btn-text">Activate Boost</span>
+                    </button>
+                </div>
+                <div class="boost-status" id="boostStatus" style="display: none;">
+                    <div class="boost-active">Boost Active!</div>
+                    <div class="boost-timer" id="boostTimer"></div>
+                </div>
+            </section>
+
+            <!-- Withdrawal Section -->
+            <section class="section withdrawal-section">
+                <div class="section-header">
+                    <h2 class="section-title">Withdraw Tokens</h2>
+                    <p class="section-description">Minimum withdrawal: 100 DOVAZOL</p>
+                </div>
+                <div class="withdrawal-form">
+                    <div class="input-group">
+                        <label for="walletAddress" class="input-label">Wallet Address</label>
+                        <input 
+                            type="text" 
+                            id="walletAddress" 
+                            class="input-field" 
+                            placeholder="Enter your wallet address"
+                        >
+                    </div>
+                    <div class="input-group">
+                        <label for="withdrawAmount" class="input-label">Amount</label>
+                        <input 
+                            type="number" 
+                            id="withdrawAmount" 
+                            class="input-field" 
+                            placeholder="Enter amount to withdraw"
+                            min="100"
+                        >
+                    </div>
+                    <button class="btn btn-primary" id="withdrawTokens">
+                        <span class="btn-text">Withdraw Tokens</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Referral Section -->
+            <section class="section referral-section">
+                <div class="section-header">
+                    <h2 class="section-title">Referral Program</h2>
+                    <p class="section-description">Earn 150 DOVAZOL for each friend you invite</p>
+                </div>
+                <div class="referral-info">
+                    <div class="referral-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="referralCount">0</div>
+                            <div class="stat-label">Friends Invited</div>
+                        </div>
+                    </div>
+                    <div class="referral-link-container">
+                        <div class="input-group">
+                            <label class="input-label">Your Referral Link</label>
+                            <div class="link-input-container">
+                                <input 
+                                    type="text" 
+                                    id="referralLink" 
+                                    class="input-field" 
+                                    readonly
+                                    placeholder="Loading..."
+                                >
+                                <button class="btn btn-small" id="copyLink">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leaderboard Section -->
+            <section class="section leaderboard-section">
+                <div class="section-header">
+                    <h2 class="section-title">Leaderboard</h2>
+                    <p class="section-description">Top referrers this month</p>
+                </div>
+                <div class="leaderboard" id="leaderboard">
+                    <!-- Leaderboard will be loaded dynamically -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Processing...</div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
