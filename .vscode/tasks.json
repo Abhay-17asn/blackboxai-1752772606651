@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "start",
+			"path": "DOVAZOL",
+			"problemMatcher": [],
+			"label": "npm: start - DOVAZOL",
+			"detail": "node server.js"
+		}
+	]
+}
