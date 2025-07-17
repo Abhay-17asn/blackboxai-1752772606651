@@ -1,0 +1,15 @@
+module.exports = {
+    PORT: process.env.PORT || 8000,
+    TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN_HERE',
+    MIN_WITHDRAWAL_THRESHOLD: 100,
+    AIRDROP_AMOUNT: 50,
+    TASK_REWARDS: {
+        SHARE_APP: 25,
+        INVITE_FRIEND: 100,
+        DAILY_CHECK: 10,
+        FOLLOW_CHANNEL: 75
+    },
+    BOOST_COST: 200,
+    BOOST_DURATION: 3600000, // 1 hour in milliseconds
+    REFERRAL_REWARD: 150
+};
